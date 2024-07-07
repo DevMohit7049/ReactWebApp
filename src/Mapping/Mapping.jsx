@@ -5,6 +5,7 @@ import Home from '../Component/Home/Home';
 import Login from '../Component/Pages/Registration/Login';
 import { Provider } from 'react-redux';
 import store from '../Redux/Store';
+import ProductList from '../Component/Home/HomeComponent/ProductList';
 const Mapping = () => {
   return (
 
@@ -15,6 +16,7 @@ const Mapping = () => {
          <Route>
              <Route path='/login' element={<Login/>}/>
              <Route path='/' element={<Home/>}/>
+             <Route path='/productList' element={<ProductList/>}/>
             
          </Route>
     </Routes>

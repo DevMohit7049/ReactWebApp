@@ -7,9 +7,11 @@ const ProductList = () => {
   const dispatch = useDispatch();
   const {load_product_array} = useSelector((state)=>state.cartReducer);
 
+  
+
   useEffect(()=>{
-     dispatch(setProductArray())
-  },[])
+    
+  },[load_product_array])
 
   return (
 <>

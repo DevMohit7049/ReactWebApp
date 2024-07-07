@@ -7,7 +7,7 @@ const SearchBar = () => {
   const dispatch = useDispatch();
   const getAllProduct = useSelector((state) => state.cartReducer);
 
-   console.log(getAllProduct);
+  //  console.log(getAllProduct);
 
   const [search, setSearch] = useState("");
   const navigate = useNavigate();

@@ -2,7 +2,9 @@ import React from 'react'
 import AddForm from './HomeComponent/AddForm'
 import ProductList from './HomeComponent/ProductList'
 const Home = () => {
-    
+  
+  
+
   return (
    
       <>

@@ -1,7 +1,8 @@
 
 import React, { useEffect, useState } from 'react'
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { setProductArray } from '../../../Redux/Action';
+import { useNavigate } from 'react-router-dom';
 
 const AddForm = () => {
 
@@ -9,7 +10,11 @@ const AddForm = () => {
   const [product_name, setName] = useState('');
   const [product_price, setPrice] = useState('')
   const dispatch = useDispatch();
+  const navigate = useNavigate()
 
+  const {load_product_array} = useSelector((state)=>state.cartReducer);
+
+  console.log(load_product_array);
 
   useEffect(()=>{
      dispatch(setProductArray(products));
@@ -31,13 +36,16 @@ const AddForm = () => {
         alert('Product Already Exist')
       }
       else{
-        const newProduct = { product_name, product_price };
-        setProducts([...products, newProduct]);
+        // const newProduct = { product_name, product_price };
+        setProducts([...products]);
         alert('product added')
+        // navigate('/productList')
         setName('');
         setPrice('');
       }
     }
+
+    
       
 } 
 
