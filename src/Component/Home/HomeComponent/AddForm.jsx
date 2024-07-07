@@ -6,23 +6,35 @@ import { useNavigate } from 'react-router-dom';
 
 const AddForm = () => {
 
+  // states //
   const [products, setProducts] = useState([]);
   const [product_name, setName] = useState('');
   const [product_price, setPrice] = useState('')
+
   const dispatch = useDispatch();
   const navigate = useNavigate()
 
 
+  useEffect(()=>{
+    alert('No Product Found')
+},[])
+
+  // setting product in localstorage//
+
   useEffect(() => {
     localStorage.setItem("productData", JSON.stringify(products));
   }, [products]);
-  
 
+
+
+
+  // calling redux function //
   useEffect(()=>{
      dispatch(setProductArray(products));
   },[products]);
 
 
+  // adding new product into the list //
   const handleSubmit=(e)=>{
 
     e.preventDefault()
@@ -39,7 +51,7 @@ const AddForm = () => {
         const newProduct = { product_name, product_price };
         setProducts([...products,newProduct]);
         alert('product added')
-        // navigate('/productList')
+        navigate('/home')
         // window.location.reload(false);
         setName('');
         setPrice('');

@@ -11,6 +11,9 @@ const Login = () => {
   const [email,setEmail] = useState('');
   const [password,setPassword] = useState('');
 
+
+// login functionality //
+
 const onSubmit=()=>{
   
    axios.post('https://reqres.in/api/login',{email,password})
@@ -18,7 +21,7 @@ const onSubmit=()=>{
 
     const user = res.data;
     localStorage.setItem('user',JSON.stringify(user));
-    navigate('/home')
+    navigate('/addproduct')
     
  }).catch((err)=>{
 

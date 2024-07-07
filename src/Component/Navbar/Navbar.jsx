@@ -6,10 +6,13 @@ const Navbar = () => {
 
 
   const navigate = useNavigate();
+
+  // getting user from localstorage //
   const user = JSON.parse(localStorage.getItem('user'));
 
-  const logout=()=>{
 
+  // logout functionality //
+  const logout=()=>{
     axios.get('https://reqres.in/api/logout')
     .then((res)=>{
 
@@ -25,8 +28,7 @@ const Navbar = () => {
 
   return (
     <>
-
-<nav className="navbar navbar-expand-lg bg-dark sticky-top ">
+<nav className="navbar navbar-expand-lg bg-dark sticky-top">
   <div className="container-fluid">
     <Link className="navbar-brand" style={{color:'#fff'}}>ReactWebApp</Link>
     
@@ -50,6 +52,12 @@ const Navbar = () => {
         </li>:''
         }
 
+
+         {
+          user?<li className="nav-item">
+          <Link className="nav-link" to={'/productlist'} style={{color:'white'}}>Product</Link>
+        </li>:''
+        }
 
         
        {user && <li className="cursor-pointer" onClick={logout}>
