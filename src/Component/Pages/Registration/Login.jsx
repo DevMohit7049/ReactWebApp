@@ -18,7 +18,7 @@ const onSubmit=()=>{
 
     const user = res.data;
     localStorage.setItem('user',JSON.stringify(user));
-    navigate('/')
+    navigate('/home')
     
  }).catch((err)=>{
 

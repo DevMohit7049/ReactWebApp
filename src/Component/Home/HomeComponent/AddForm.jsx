@@ -13,6 +13,11 @@ const AddForm = () => {
   const navigate = useNavigate()
 
 
+  useEffect(() => {
+    localStorage.setItem("productData", JSON.stringify(products));
+  }, [products]);
+  
+
   useEffect(()=>{
      dispatch(setProductArray(products));
   },[products]);
@@ -35,6 +40,7 @@ const AddForm = () => {
         setProducts([...products,newProduct]);
         alert('product added')
         // navigate('/productList')
+        // window.location.reload(false);
         setName('');
         setPrice('');
       }

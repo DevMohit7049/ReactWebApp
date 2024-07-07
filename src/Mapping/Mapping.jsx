@@ -7,6 +7,9 @@ import { Provider } from 'react-redux';
 import store from '../Redux/Store';
 import ProductList from '../Component/Home/HomeComponent/ProductList';
 const Mapping = () => {
+
+  // const user = JSON.parse(localStorage.getItem('user'));
+
   return (
 
     <Provider store={store}>
@@ -14,7 +17,7 @@ const Mapping = () => {
     <Navbar/>
     <Routes>
          <Route>
-             <Route path='/login' element={<Login/>}/>
+             <Route path='/' element={<Login/>}/>
              <Route path='/home' element={<Home/>}/>
              <Route path='/productList' element={<ProductList/>}/>
             
