@@ -40,7 +40,7 @@ const Navbar = () => {
       <ul className="navbar-nav me-auto mb-2 mb-lg-0">
         {
           user ?<li className="nav-item">
-              <Link className="nav-link" to={'/'} style={{color:'white'}}>Home</Link>
+              <Link className="nav-link" to={'/home'} style={{color:'white'}}>Home</Link>
             </li>:''
         }
       

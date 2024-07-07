@@ -12,15 +12,10 @@ const AddForm = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate()
 
-  const {load_product_array} = useSelector((state)=>state.cartReducer);
-
-  console.log(load_product_array);
 
   useEffect(()=>{
      dispatch(setProductArray(products));
   },[products]);
-
-
 
 
   const handleSubmit=(e)=>{
@@ -36,8 +31,8 @@ const AddForm = () => {
         alert('Product Already Exist')
       }
       else{
-        // const newProduct = { product_name, product_price };
-        setProducts([...products]);
+        const newProduct = { product_name, product_price };
+        setProducts([...products,newProduct]);
         alert('product added')
         // navigate('/productList')
         setName('');

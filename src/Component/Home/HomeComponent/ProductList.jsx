@@ -5,13 +5,12 @@ import { setProductArray } from '../../../Redux/Action';
 const ProductList = () => {
 
   const dispatch = useDispatch();
-  const {load_product_array} = useSelector((state)=>state.cartReducer);
-
-  
+  const load_product_array = useSelector((state)=>state.cartReducer.load_product_array);
 
   useEffect(()=>{
-    
-  },[load_product_array])
+     dispatch(setProductArray())
+  },[dispatch])
+
 
   return (
 <>
@@ -24,14 +23,14 @@ const ProductList = () => {
     </tr>
   </thead>
   <tbody>
-    {
+    {/* {
       load_product_array.map((item)=>{
         <tr>
         <td>{item.product_name}</td>
         <td>{item.product_price}</td>
       </tr>
       })
-    }
+    } */}
   </tbody>
 </table>
       </>

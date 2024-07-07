@@ -15,7 +15,7 @@ const Mapping = () => {
     <Routes>
          <Route>
              <Route path='/login' element={<Login/>}/>
-             <Route path='/' element={<Home/>}/>
+             <Route path='/home' element={<Home/>}/>
              <Route path='/productList' element={<ProductList/>}/>
             
          </Route>

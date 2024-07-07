@@ -3,8 +3,9 @@
 export const PRODUCT_ARRAY = 'PRODUCT_ARRAY'
 
 export const setProductArray = (productArray) =>{
+  console.log(productArray);
   
-  return async dispatch=>{
+  return dispatch=>{
     try
     {
       dispatch({
