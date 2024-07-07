@@ -1,0 +1,13 @@
+.container{
+  border: 1px solid black;
+  margin: 50px auto;
+  height: 50vh;
+  width: 30vw;
+  border-radius: 20px;
+}
+
+.container>h2{
+  text-align: center;
+  margin: 10px;
+  font-weight: 600;
+}
